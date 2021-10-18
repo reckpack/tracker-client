@@ -1,24 +1,31 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../Views/Home.vue";
+import About from "../Views/About.vue";
+import Table from "../Views/Table.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
     {
         path: "/",
-        name: "Home",
+        name: "home",
         component: Home,
     },
     {
         path: "/about",
-        name: "About",
-        component: () => import(/* webpackChunkName: "About" */ "../views/About.vue"),
+        name: "about",
+        component: About,//() => import(/* webpackChunkName: "About" */ "../Views/About.vue"),
+    },
+    {
+        path: "/table",
+        name: "table",
+        component: () => import(/* webpackChunkName: "About" */ "../Views/Table.vue"),
     },
 ];
 
 const router = new VueRouter({
-    mode: "history",
+    //mode: "history",
     routes,
 });
 
